@@ -1,0 +1,26 @@
+
+What is DMARC and what are its three policy options (p=none, p=quarantine, p=reject)?
+
+what is HTTP Strict Transport Security? and what are the "preload" and "includeSubDomains"
+
+What are SMB, RDP, and Telnet services, and why does consider them "high-risk" when exposed to the internet?
+
+how do the statistics and recommendations differ between standard security testing versus having formal VDP program?
+
+
+
+
+What were the top 3 industries represented in the software security testing data?
+Why does the document argue that even lower-risk vulnerabilities shouldn't be ignored? Can you provide a specific example mentioned?
+
+What percentage of total vulnerabilities fell into OWASP categories, and how were they distributed across A01, A02, A03, A05, and A07? Provide specific percentages for each.
+
+what broader industry trend is emerging regarding software supply chain security?
+
+what concerning statistic did the report find about HSTS adoption?
+
+
+
+doc #3:
+which category had the highest percentage of vulnerabilities?
+what are the top three vulnerabilities found 

@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+pydantic
+python-dotenv
+httpx
+opensearch-py
+qdrant-client
+chromadb
+pymilvus
+sentence-transformers
+PyPDF2
+pydantic-settings
+tiktoken
+wasabi
+numpy
+spacy
+openai

@@ -1,0 +1,168 @@
+2024-11-21 14:26:16,460 - lightrag - WARNING - No valid API key found
+2024-11-21 14:28:53,741 - lightrag - INFO - Logger initialized for working directory: ./dickens
+2024-11-21 14:28:53,742 - lightrag - INFO - Load KV full_docs with 0 data
+2024-11-21 14:28:53,742 - lightrag - INFO - Load KV text_chunks with 0 data
+2024-11-21 14:28:53,742 - lightrag - INFO - Load KV llm_response_cache with 0 data
+2024-11-21 14:28:53,744 - lightrag - INFO - Creating a new event loop in main thread.
+2024-11-21 14:28:53,744 - lightrag - INFO - [New Docs] inserting 1 docs
+2024-11-21 14:28:54,345 - lightrag - INFO - [New Chunks] inserting 8 chunks
+2024-11-21 14:28:54,345 - lightrag - INFO - Inserting 8 vectors to chunks
+2024-11-21 14:28:56,228 - lightrag - INFO - [Entity Extraction]...
+2024-11-21 14:30:13,848 - lightrag - INFO - Inserting 81 vectors to entities
+2024-11-21 14:30:16,632 - lightrag - INFO - Inserting 72 vectors to relationships
+2024-11-21 14:30:19,302 - lightrag - INFO - Writing graph with 81 nodes, 72 edges
+2024-11-21 14:32:35,200 - lightrag - INFO - Creating a new event loop in main thread.
+2024-11-21 14:32:38,140 - lightrag - INFO - Local query uses 60 entites, 64 relations, 3 text units
+2024-11-21 14:32:38,870 - lightrag - INFO - Global query uses 69 entites, 60 relations, 3 text units
+2024-11-21 14:33:46,532 - lightrag - INFO - Creating a new event loop in main thread.
+2024-11-21 14:33:51,107 - lightrag - INFO - Local query uses 60 entites, 64 relations, 3 text units
+2024-11-21 14:56:14,881 - lightrag - INFO - Logger initialized for working directory: ./test_storage
+2024-11-21 14:56:14,881 - lightrag - INFO - Load KV full_docs with 0 data
+2024-11-21 14:56:14,882 - lightrag - INFO - Load KV text_chunks with 0 data
+2024-11-21 14:56:14,882 - lightrag - INFO - Load KV llm_response_cache with 0 data
+2024-11-21 14:56:14,883 - lightrag - INFO - Creating a new event loop in main thread.
+2024-11-21 14:56:14,884 - lightrag - INFO - [New Docs] inserting 1 docs
+2024-11-21 14:56:15,634 - lightrag - INFO - [New Chunks] inserting 14 chunks
+2024-11-21 14:56:15,634 - lightrag - INFO - Inserting 14 vectors to chunks
+2024-11-21 14:56:18,297 - lightrag - INFO - [Entity Extraction]...
+2024-11-21 14:57:33,477 - lightrag - INFO - Inserting 130 vectors to entities
+2024-11-21 14:59:04,761 - lightrag - INFO - Inserting 132 vectors to relationships
+2024-11-21 14:59:07,782 - lightrag - INFO - Writing graph with 131 nodes, 132 edges
+2024-11-21 14:59:44,643 - lightrag - INFO - Creating a new event loop in main thread.
+2024-11-21 14:59:44,644 - lightrag - WARNING - All docs are already in the storage
+2024-11-21 14:59:44,674 - lightrag - INFO - Writing graph with 131 nodes, 132 edges
+2024-11-21 15:00:03,793 - lightrag - INFO - Creating a new event loop in main thread.
+2024-11-21 15:00:03,793 - lightrag - INFO - [New Docs] inserting 1 docs
+2024-11-21 15:00:03,802 - lightrag - INFO - [New Chunks] inserting 6 chunks
+2024-11-21 15:00:03,802 - lightrag - INFO - Inserting 6 vectors to chunks
+2024-11-21 15:00:05,284 - lightrag - INFO - [Entity Extraction]...
+2024-11-21 15:00:39,532 - lightrag - INFO - Inserting 87 vectors to entities
+2024-11-21 15:00:42,642 - lightrag - INFO - Inserting 52 vectors to relationships
+2024-11-21 15:00:44,734 - lightrag - INFO - Writing graph with 218 nodes, 184 edges
+2024-11-21 15:02:06,328 - lightrag - INFO - Logger initialized for working directory: ./test_storage
+2024-11-21 15:02:06,329 - lightrag - INFO - Load KV full_docs with 2 data
+2024-11-21 15:02:06,330 - lightrag - INFO - Load KV text_chunks with 20 data
+2024-11-21 15:02:06,331 - lightrag - INFO - Load KV llm_response_cache with 40 data
+2024-11-21 15:02:06,339 - lightrag - INFO - Loaded graph from ./test_storage/graph_chunk_entity_relation.graphml with 218 nodes, 184 edges
+2024-11-21 15:02:06,363 - lightrag - INFO - Creating a new event loop in main thread.
+2024-11-21 15:02:06,364 - lightrag - WARNING - All docs are already in the storage
+2024-11-21 15:02:06,408 - lightrag - INFO - Writing graph with 218 nodes, 184 edges
+2024-11-21 15:02:27,437 - lightrag - ERROR - Error rewriting prompt: Missing required arguments; Expected either ('messages' and 'model') or ('messages', 'model' and 'stream') arguments to be given
+2024-11-21 15:02:27,438 - lightrag - INFO - Creating a new event loop in main thread.
+2024-11-21 15:02:55,763 - lightrag - ERROR - Error rewriting prompt: Missing required arguments; Expected either ('messages' and 'model') or ('messages', 'model' and 'stream') arguments to be given
+2024-11-21 15:02:55,763 - lightrag - INFO - Creating a new event loop in main thread.
+2024-11-21 15:03:08,087 - lightrag - ERROR - Error rewriting prompt: Missing required arguments; Expected either ('messages' and 'model') or ('messages', 'model' and 'stream') arguments to be given
+2024-11-21 15:03:08,087 - lightrag - INFO - Creating a new event loop in main thread.
+2024-11-21 15:06:53,523 - lightrag - INFO - Logger initialized for working directory: ./test_storage
+2024-11-21 15:06:53,524 - lightrag - INFO - Load KV full_docs with 0 data
+2024-11-21 15:06:53,524 - lightrag - INFO - Load KV text_chunks with 0 data
+2024-11-21 15:06:53,525 - lightrag - INFO - Load KV llm_response_cache with 0 data
+2024-11-21 15:06:53,527 - lightrag - INFO - Creating a new event loop in main thread.
+2024-11-21 15:06:53,528 - lightrag - INFO - [New Docs] inserting 1 docs
+2024-11-21 15:06:54,167 - lightrag - INFO - [New Chunks] inserting 16 chunks
+2024-11-21 15:06:54,167 - lightrag - INFO - Inserting 16 vectors to chunks
+2024-11-21 15:06:56,335 - lightrag - INFO - [Entity Extraction]...
+2024-11-21 15:08:16,256 - lightrag - INFO - Inserting 164 vectors to entities
+2024-11-21 15:08:19,605 - lightrag - INFO - Inserting 158 vectors to relationships
+2024-11-21 15:08:22,846 - lightrag - INFO - Writing graph with 164 nodes, 158 edges
+2024-11-21 15:16:05,075 - lightrag - INFO - Creating a new event loop in main thread.
+2024-11-21 15:16:05,076 - lightrag - INFO - [New Docs] inserting 1 docs
+2024-11-21 15:16:05,078 - lightrag - INFO - [New Chunks] inserting 1 chunks
+2024-11-21 15:16:05,078 - lightrag - INFO - Inserting 1 vectors to chunks
+2024-11-21 15:16:05,723 - lightrag - INFO - [Entity Extraction]...
+2024-11-21 15:16:08,227 - lightrag - WARNING - Didn't extract any entities, maybe your LLM is not working
+2024-11-21 15:16:08,227 - lightrag - WARNING - No new entities and relationships found
+2024-11-21 15:16:08,264 - lightrag - INFO - Writing graph with 164 nodes, 158 edges
+2024-11-21 15:16:38,193 - lightrag - ERROR - Error rewriting prompt: Missing required arguments; Expected either ('messages' and 'model') or ('messages', 'model' and 'stream') arguments to be given
+2024-11-21 15:16:38,194 - lightrag - INFO - Creating a new event loop in main thread.
+2024-11-21 15:16:39,796 - lightrag - INFO - Local query uses 60 entites, 64 relations, 3 text units
+2024-11-21 15:16:40,557 - lightrag - INFO - Global query uses 78 entites, 60 relations, 4 text units
+2024-11-21 15:17:34,828 - lightrag - ERROR - Error rewriting prompt: Missing required arguments; Expected either ('messages' and 'model') or ('messages', 'model' and 'stream') arguments to be given
+2024-11-21 15:17:34,829 - lightrag - INFO - Creating a new event loop in main thread.
+2024-11-21 15:17:36,532 - lightrag - INFO - Local query uses 60 entites, 84 relations, 4 text units
+2024-11-21 15:17:37,490 - lightrag - INFO - Global query uses 67 entites, 60 relations, 3 text units
+2024-11-21 15:18:38,940 - lightrag - INFO - Creating a new event loop in main thread.
+2024-11-21 15:18:38,941 - lightrag - INFO - [New Docs] inserting 1 docs
+2024-11-21 15:18:38,953 - lightrag - INFO - [New Chunks] inserting 7 chunks
+2024-11-21 15:18:38,954 - lightrag - INFO - Inserting 7 vectors to chunks
+2024-11-21 15:18:41,050 - lightrag - INFO - [Entity Extraction]...
+2024-11-21 15:19:28,356 - lightrag - INFO - Inserting 100 vectors to entities
+2024-11-21 15:19:31,433 - lightrag - INFO - Inserting 88 vectors to relationships
+2024-11-21 15:19:34,371 - lightrag - INFO - Writing graph with 263 nodes, 242 edges
+2024-11-21 15:21:44,353 - lightrag - INFO - Logger initialized for working directory: ./test_storage
+2024-11-21 15:21:44,355 - lightrag - INFO - Load KV full_docs with 2 data
+2024-11-21 15:21:44,356 - lightrag - INFO - Load KV text_chunks with 23 data
+2024-11-21 15:21:44,358 - lightrag - INFO - Load KV llm_response_cache with 52 data
+2024-11-21 15:21:44,368 - lightrag - INFO - Loaded graph from ./test_storage/graph_chunk_entity_relation.graphml with 263 nodes, 242 edges
+2024-11-21 15:23:24,023 - lightrag - ERROR - Error rewriting prompt: Missing required arguments; Expected either ('messages' and 'model') or ('messages', 'model' and 'stream') arguments to be given
+2024-11-21 15:23:24,024 - lightrag - INFO - Creating a new event loop in main thread.
+2024-11-21 15:23:26,202 - lightrag - INFO - Local query uses 60 entites, 103 relations, 3 text units
+2024-11-21 15:23:26,969 - lightrag - INFO - Global query uses 69 entites, 60 relations, 4 text units
+2024-11-21 15:36:54,219 - lightrag - INFO - Logger initialized for working directory: ./local_storage
+2024-11-21 15:36:54,219 - lightrag - INFO - Load KV full_docs with 0 data
+2024-11-21 15:36:54,220 - lightrag - INFO - Load KV text_chunks with 0 data
+2024-11-21 15:36:54,221 - lightrag - INFO - Load KV llm_response_cache with 0 data
+2024-11-21 15:36:54,222 - lightrag - INFO - Creating a new event loop in main thread.
+2024-11-21 15:36:54,223 - lightrag - INFO - [New Docs] inserting 1 docs
+2024-11-21 15:36:54,840 - lightrag - INFO - [New Chunks] inserting 15 chunks
+2024-11-21 15:36:54,840 - lightrag - INFO - Inserting 15 vectors to chunks
+2024-11-21 15:36:55,728 - lightrag - INFO - [Entity Extraction]...
+2024-11-21 15:37:53,209 - lightrag - INFO - Inserting 144 vectors to entities
+2024-11-21 15:37:56,293 - lightrag - INFO - Inserting 140 vectors to relationships
+2024-11-21 15:37:59,540 - lightrag - INFO - Writing graph with 146 nodes, 140 edges
+2024-11-21 15:38:09,684 - lightrag - INFO - Creating a new event loop in main thread.
+2024-11-21 15:38:09,686 - lightrag - INFO - [New Docs] inserting 1 docs
+2024-11-21 15:38:09,712 - lightrag - INFO - [New Chunks] inserting 16 chunks
+2024-11-21 15:38:09,712 - lightrag - INFO - Inserting 16 vectors to chunks
+2024-11-21 15:38:11,600 - lightrag - INFO - [Entity Extraction]...
+2024-11-21 15:39:14,815 - lightrag - INFO - Inserting 189 vectors to entities
+2024-11-21 15:41:35,325 - lightrag - ERROR - Error rewriting prompt: Missing required arguments; Expected either ('messages' and 'model') or ('messages', 'model' and 'stream') arguments to be given
+2024-11-21 15:41:35,326 - lightrag - INFO - Creating a new event loop in main thread.
+2024-11-21 15:41:36,813 - lightrag - INFO - Local query uses 60 entites, 63 relations, 3 text units
+2024-11-21 15:41:37,550 - lightrag - INFO - Global query uses 64 entites, 60 relations, 3 text units
+2024-11-21 15:42:26,660 - lightrag - ERROR - Error rewriting prompt: Missing required arguments; Expected either ('messages' and 'model') or ('messages', 'model' and 'stream') arguments to be given
+2024-11-21 15:42:26,661 - lightrag - INFO - Creating a new event loop in main thread.
+2024-11-21 15:42:28,690 - lightrag - INFO - Local query uses 60 entites, 85 relations, 3 text units
+2024-11-21 15:42:29,369 - lightrag - INFO - Global query uses 64 entites, 60 relations, 3 text units
+2024-11-21 15:43:08,131 - lightrag - ERROR - Error rewriting prompt: Missing required arguments; Expected either ('messages' and 'model') or ('messages', 'model' and 'stream') arguments to be given
+2024-11-21 15:43:08,131 - lightrag - INFO - Creating a new event loop in main thread.
+2024-11-21 15:43:10,132 - lightrag - INFO - Local query uses 60 entites, 77 relations, 3 text units
+2024-11-21 15:43:10,738 - lightrag - INFO - Global query uses 64 entites, 60 relations, 3 text units
+2024-11-21 15:44:14,253 - lightrag - INFO - Logger initialized for working directory: ./local_storage
+2024-11-21 15:44:14,254 - lightrag - INFO - Load KV full_docs with 1 data
+2024-11-21 15:44:14,255 - lightrag - INFO - Load KV text_chunks with 15 data
+2024-11-21 15:44:14,256 - lightrag - INFO - Load KV llm_response_cache with 68 data
+2024-11-21 15:44:14,263 - lightrag - INFO - Loaded graph from ./local_storage/graph_chunk_entity_relation.graphml with 146 nodes, 140 edges
+2024-11-21 15:44:36,505 - lightrag - INFO - Creating a new event loop in main thread.
+2024-11-21 15:44:36,507 - lightrag - INFO - [New Docs] inserting 1 docs
+2024-11-21 15:44:36,519 - lightrag - INFO - [New Chunks] inserting 7 chunks
+2024-11-21 15:44:36,519 - lightrag - INFO - Inserting 7 vectors to chunks
+2024-11-21 15:44:38,315 - lightrag - INFO - [Entity Extraction]...
+2024-11-21 15:45:20,815 - lightrag - INFO - Inserting 106 vectors to entities
+2024-11-21 15:45:23,738 - lightrag - INFO - Inserting 80 vectors to relationships
+2024-11-21 15:45:26,611 - lightrag - INFO - Writing graph with 256 nodes, 220 edges
+2024-11-21 15:46:06,665 - lightrag - ERROR - Error rewriting prompt: Missing required arguments; Expected either ('messages' and 'model') or ('messages', 'model' and 'stream') arguments to be given
+2024-11-21 15:46:06,666 - lightrag - INFO - Creating a new event loop in main thread.
+2024-11-21 15:46:09,376 - lightrag - INFO - Local query uses 60 entites, 73 relations, 3 text units
+2024-11-21 15:46:10,063 - lightrag - INFO - Global query uses 76 entites, 60 relations, 3 text units
+2024-11-21 15:49:18,100 - lightrag - INFO - Inserting 157 vectors to relationships
+2024-11-21 15:49:21,433 - lightrag - INFO - Writing graph with 334 nodes, 297 edges
+2024-11-21 15:49:55,439 - lightrag - ERROR - Error rewriting prompt: Missing required arguments; Expected either ('messages' and 'model') or ('messages', 'model' and 'stream') arguments to be given
+2024-11-21 15:49:55,440 - lightrag - INFO - Creating a new event loop in main thread.
+2024-11-21 15:49:57,528 - lightrag - INFO - Local query uses 60 entites, 69 relations, 4 text units
+2024-11-21 15:49:58,247 - lightrag - INFO - Global query uses 76 entites, 60 relations, 3 text units
+2024-11-21 16:01:19,708 - lightrag - INFO - Creating a new event loop in main thread.
+2024-11-21 16:01:19,709 - lightrag - WARNING - All docs are already in the storage
+2024-11-21 16:01:19,789 - lightrag - INFO - Writing graph with 256 nodes, 220 edges
+2024-11-21 16:17:23,711 - lightrag - INFO - Creating a new event loop in main thread.
+2024-11-21 16:17:23,712 - lightrag - WARNING - All docs are already in the storage
+2024-11-21 16:17:23,772 - lightrag - INFO - Writing graph with 256 nodes, 220 edges
+2024-11-21 16:17:33,691 - lightrag - INFO - Creating a new event loop in main thread.
+2024-11-21 16:17:33,692 - lightrag - WARNING - All docs are already in the storage
+2024-11-21 16:17:33,746 - lightrag - INFO - Writing graph with 256 nodes, 220 edges
+2024-11-21 16:17:40,909 - lightrag - INFO - Creating a new event loop in main thread.
+2024-11-21 16:17:40,911 - lightrag - WARNING - All docs are already in the storage
+2024-11-21 16:17:40,969 - lightrag - INFO - Writing graph with 256 nodes, 220 edges
+2024-11-21 16:17:46,833 - lightrag - INFO - Creating a new event loop in main thread.
+2024-11-21 16:17:46,834 - lightrag - WARNING - All docs are already in the storage
+2024-11-21 16:17:46,894 - lightrag - INFO - Writing graph with 256 nodes, 220 edges

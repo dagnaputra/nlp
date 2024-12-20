@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 100vh;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#1b7626", "description": "\"AI Services encompasses the technologies and systems that provide automated services, including those that respond to customer calls and requests.\"\u003cSEP\u003e\"AI Services is a system designed for processing voice data during calls and providing automated responses, consisting of various components for speech processing and storage.\"", "entity_type": "\"ORGANIZATION\"", "id": "\"AI SERVICES\"", "label": "\"AI SERVICES\"", "shape": "dot", "size": 10, "source_id": "chunk-b7c438739e47c998e3f33dff10389452\u003cSEP\u003echunk-e8060447ed5a1386a19ba248ab48ccb6"}, {"color": "#5189cb", "description": "\"CakeCallVoice is a component of the AI Services system responsible for converting speech to text and text to speech, facilitating voice communication.\"", "entity_type": "\"TECHNOLOGY\"", "id": "\"CAKECALLVOICE\"", "label": "\"CAKECALLVOICE\"", "shape": "dot", "size": 10, "source_id": "chunk-b7c438739e47c998e3f33dff10389452"}, {"color": "#762bc8", "description": "\"CakeCallNLP is responsible for the natural language processing within the AI Services system, enabling intelligent interaction.", "entity_type": "\"TECHNOLOGY\"", "id": "\"CAKECALLNLP\"", "label": "\"CAKECALLNLP\"", "shape": "dot", "size": 10, "source_id": "chunk-b7c438739e47c998e3f33dff10389452"}, {"color": "#83fed5", "description": "\"CakeStorage is a component that handles the storage of call data and summaries within the AI Services system.\"", "entity_type": "\"TECHNOLOGY\"", "id": "\"CAKESTORAGE\"", "label": "\"CAKESTORAGE\"", "shape": "dot", "size": 10, "source_id": "chunk-b7c438739e47c998e3f33dff10389452"}, {"color": "#d84230", "description": "\"WebSocket API is a technology used to ensure real-time processing of audio streams for bidirectional communication in the AI Services system.\"\u003cSEP\u003e\"WebSocket API is an event-driven technology that allows real-time communication between the server and clients, used prominently for call management in this context.\"", "entity_type": "\"TECHNOLOGY\"", "id": "\"WEBSOCKET API\"", "label": "\"WEBSOCKET API\"", "shape": "dot", "size": 10, "source_id": "chunk-b7c438739e47c998e3f33dff10389452\u003cSEP\u003echunk-e8060447ed5a1386a19ba248ab48ccb6"}, {"color": "#5cc2e1", "description": "\"Client refers to the call center operating the AI Services system, engaging in real-time interactions through the Callbot.\"", "entity_type": "\"PERSON\"", "id": "\"CLIENT\"", "label": "\"CLIENT\"", "shape": "dot", "size": 10, "source_id": "chunk-b7c438739e47c998e3f33dff10389452"}, {"color": "#908707", "description": "\"Callbot is an automated system that processes voice calls, leveraging AI technology for real-time interaction and decision-making in customer service.\"\u003cSEP\u003e\"Callbot refers to a service or system that facilitates communication through voice calls, part of the AI services utilized for client interactions.\"", "entity_type": "\"TECHNOLOGY\"", "id": "\"CALLBOT\"", "label": "\"CALLBOT\"", "shape": "dot", "size": 10, "source_id": "chunk-b7c438739e47c998e3f33dff10389452\u003cSEP\u003echunk-e8060447ed5a1386a19ba248ab48ccb6"}, {"color": "#4ab055", "description": "\"Speech Processing encompasses the various techniques and technologies used to analyze and manipulate human speech, central to the operation of AI Services.\"", "entity_type": "\"CONCEPT\"", "id": "\"SPEECH PROCESSING\"", "label": "\"SPEECH PROCESSING\"", "shape": "dot", "size": 10, "source_id": "chunk-b7c438739e47c998e3f33dff10389452"}, {"color": "#8e4d37", "description": "\"Audio Streaming refers to the continuous transmission of audio data between the AI system and the user, vital for real-time communication during calls.\"", "entity_type": "\"CONCEPT\"", "id": "\"AUDIO STREAMING\"", "label": "\"AUDIO STREAMING\"", "shape": "dot", "size": 10, "source_id": "chunk-b7c438739e47c998e3f33dff10389452"}, {"color": "#3c044f", "description": "\"AI Speaker is the synthesized voice output generated by the system, providing spoken responses to users during calls.\"", "entity_type": "\"TECHNOLOGY\"", "id": "\"AI SPEAKER\"", "label": "\"AI SPEAKER\"", "shape": "dot", "size": 10, "source_id": "chunk-b7c438739e47c998e3f33dff10389452"}, {"color": "#a20c3c", "description": "\"Text-to-Speech is a functionality that allows the system to generate spoken language from text, facilitating communication with users through synthesized voices.\"", "entity_type": "\"TECHNOLOGY\"", "id": "\"TEXT-TO-SPEECH\"", "label": "\"TEXT-TO-SPEECH\"", "shape": "dot", "size": 10, "source_id": "chunk-b7c438739e47c998e3f33dff10389452"}, {"color": "#98e64d", "description": "\"start_call is an event type in the WebSocket API that signals the initiation of a voice call.\"", "entity_type": "\"EVENT\"", "id": "\"START_CALL\"", "label": "\"START_CALL\"", "shape": "dot", "size": 10, "source_id": "chunk-e8060447ed5a1386a19ba248ab48ccb6"}, {"color": "#75727a", "description": "\"end_call is an event type in the WebSocket API that indicates the termination of a voice call.\"", "entity_type": "\"EVENT\"", "id": "\"END_CALL\"", "label": "\"END_CALL\"", "shape": "dot", "size": 10, "source_id": "chunk-e8060447ed5a1386a19ba248ab48ccb6"}, {"color": "#c33eda", "description": "\"Call Agent refers to the orchestrator within the AI Services system managing the interaction flow and communication between client and AI services.\"", "entity_type": "\"PERSON\"", "id": "\"CALL AGENT\"", "label": "\"CALL AGENT\"", "shape": "dot", "size": 10, "source_id": "chunk-b7c438739e47c998e3f33dff10389452"}, {"color": "#bb1c57", "description": "\"Client Metadata includes specific information related to the client calls, such as identifiers, type of call, and customer data, essential for call management.\"", "entity_type": "\"CONCEPT\"", "id": "\"CLIENT METADATA\"", "label": "\"CLIENT METADATA\"", "shape": "dot", "size": 10, "source_id": "chunk-b7c438739e47c998e3f33dff10389452"}, {"color": "#bc68c3", "description": "\"Call Initialization is the initial step in the call handling process where a call is set up and relevant information is gathered.\"", "entity_type": "\"EVENT\"", "id": "\"CALL INITIALIZATION\"", "label": "\"CALL INITIALIZATION\"", "shape": "dot", "size": 10, "source_id": "chunk-b7c438739e47c998e3f33dff10389452"}, {"color": "#733479", "description": "\"Predefined Scenarios are specific call templates used to guide interactions, allowing standardized responses based on typical customer inquiries.\"", "entity_type": "\"CONCEPT\"", "id": "\"PREDEFINED SCENARIOS\"", "label": "\"PREDEFINED SCENARIOS\"", "shape": "dot", "size": 10, "source_id": "chunk-b7c438739e47c998e3f33dff10389452"}, {"color": "#522837", "description": "\"Client Messages encompass the types of messages sent from the client to initiate and manage the call process.\"", "entity_type": "\"EVENT\"", "id": "\"CLIENT MESSAGES\"", "label": "\"CLIENT MESSAGES\"", "shape": "dot", "size": 10, "source_id": "chunk-e8060447ed5a1386a19ba248ab48ccb6"}, {"color": "#c80626", "description": "\"Server Messages refers to the responses and notifications sent from the server back to the client, providing updates on call status and errors.\"", "entity_type": "\"EVENT\"", "id": "\"SERVER MESSAGES\"", "label": "\"SERVER MESSAGES\"", "shape": "dot", "size": 10, "source_id": "chunk-e8060447ed5a1386a19ba248ab48ccb6"}, {"color": "#825bba", "description": "\"Flask is a web framework for Python that allows for the creation of web applications.\"", "entity_type": "\"ORGANIZATION\"", "id": "\"FLASK\"", "label": "\"FLASK\"", "shape": "dot", "size": 10, "source_id": "chunk-2f27cf88d335708ec558f7f1d6da4a4d"}, {"color": "#ccff4d", "description": "\"python-dotenv is a Python library used for loading environment variables from a .env file, facilitating environment management.\"", "entity_type": "\"ORGANIZATION\"", "id": "\"PYTHON-DOTENV\"", "label": "\"PYTHON-DOTENV\"", "shape": "dot", "size": 10, "source_id": "chunk-2f27cf88d335708ec558f7f1d6da4a4d"}, {"color": "#2ab8df", "description": "\"google-generativeai is a library that provides access to Google\u0027s generative AI models for various applications.\"", "entity_type": "\"ORGANIZATION\"", "id": "\"GOOGLE-GENERATIVEAI\"", "label": "\"GOOGLE-GENERATIVEAI\"", "shape": "dot", "size": 10, "source_id": "chunk-2f27cf88d335708ec558f7f1d6da4a4d"}, {"color": "#f21d1e", "description": "\"requests is a popular Python library that simplifies making HTTP requests in web applications.\"", "entity_type": "\"ORGANIZATION\"", "id": "\"REQUESTS\"", "label": "\"REQUESTS\"", "shape": "dot", "size": 10, "source_id": "chunk-2f27cf88d335708ec558f7f1d6da4a4d"}, {"color": "#fe4e5c", "description": "\"loguru is a Python logging library that simplifies logging tasks with a clear and simple interface.\"", "entity_type": "\"ORGANIZATION\"", "id": "\"LOGURU\"", "label": "\"LOGURU\"", "shape": "dot", "size": 10, "source_id": "chunk-2f27cf88d335708ec558f7f1d6da4a4d"}, {"color": "#debd39", "description": "\"3.0.3 refers to the specific version of the Flask web framework, indicating updates or changes in features.\"", "entity_type": "\"VERSION\"", "id": "\"3.0.3\"", "label": "\"3.0.3\"", "shape": "dot", "size": 10, "source_id": "chunk-2f27cf88d335708ec558f7f1d6da4a4d"}, {"color": "#f799af", "description": "\"1.0.1 refers to the specific version of the python-dotenv library, indicating updates or features.\"", "entity_type": "\"VERSION\"", "id": "\"1.0.1\"", "label": "\"1.0.1\"", "shape": "dot", "size": 10, "source_id": "chunk-2f27cf88d335708ec558f7f1d6da4a4d"}, {"color": "#9f6248", "description": "\"0.8.3 refers to the version of the google-generativeai library, reflecting its evolution and enhancements.\"", "entity_type": "\"VERSION\"", "id": "\"0.8.3\"", "label": "\"0.8.3\"", "shape": "dot", "size": 10, "source_id": "chunk-2f27cf88d335708ec558f7f1d6da4a4d"}, {"color": "#aabb6c", "description": "\"2.32.3 indicates the version of the requests library, signaling its updates and improvements.\"", "entity_type": "\"VERSION\"", "id": "\"2.32.3\"", "label": "\"2.32.3\"", "shape": "dot", "size": 10, "source_id": "chunk-2f27cf88d335708ec558f7f1d6da4a4d"}, {"color": "#64553f", "description": "\"0.7.2 refers to the specific version of the loguru library, reflecting its changes and upgrades.\"", "entity_type": "\"VERSION\"", "id": "\"0.7.2\"", "label": "\"0.7.2\"", "shape": "dot", "size": 10, "source_id": "chunk-2f27cf88d335708ec558f7f1d6da4a4d"}, {"color": "#120207", "description": "\"Voice-to-Text is a critical feature of AI Services that converts spoken language into written text, enabling transcription and analysis of calls.\"", "entity_type": "\"TECHNOLOGY\"", "id": "\"VOICE-TO-TEXT\"", "label": "\"VOICE-TO-TEXT\"", "shape": "dot", "size": 10, "source_id": "chunk-b7c438739e47c998e3f33dff10389452"}, {"color": "#22c6f5", "description": "\"Real-Time Processing refers to the immediate handling and response to voice data during calls, ensuring seamless communication.\"", "entity_type": "\"CONCEPT\"", "id": "\"REAL-TIME PROCESSING\"", "label": "\"REAL-TIME PROCESSING\"", "shape": "dot", "size": 10, "source_id": "chunk-b7c438739e47c998e3f33dff10389452"}, {"color": "#18c7c4", "description": "\"Tracking Call ID is an identifier assigned to each call, used for monitoring and managing specific interactions within the system.\"", "entity_type": "\"CONCEPT\"", "id": "\"TRACKING CALL ID\"", "label": "\"TRACKING CALL ID\"", "shape": "dot", "size": 10, "source_id": "chunk-b7c438739e47c998e3f33dff10389452"}, {"color": "#368365", "description": "\"Status refers to the current state of the call, which can indicate either \u0027success\u0027 or \u0027error\u0027, reflecting the outcome of the operation.\"", "entity_type": "\"CONCEPT\"", "id": "\"STATUS\"", "label": "\"STATUS\"", "shape": "dot", "size": 10, "source_id": "chunk-e8060447ed5a1386a19ba248ab48ccb6"}, {"color": "#1f75fa", "description": "\"Message serves as a communication element sent from the server, providing feedback or notifications related to the state of the call.\"", "entity_type": "\"CONCEPT\"", "id": "\"MESSAGE\"", "label": "\"MESSAGE\"", "shape": "dot", "size": 10, "source_id": "chunk-e8060447ed5a1386a19ba248ab48ccb6"}, {"color": "#2fd2fc", "description": "\"Websocket URL is the endpoint used for establishing a real-time connection for communication between the client and the server.\"", "entity_type": "\"CONCEPT\"", "id": "\"WEBSOCKET_URL\"", "label": "\"WEBSOCKET_URL\"", "shape": "dot", "size": 10, "source_id": "chunk-e8060447ed5a1386a19ba248ab48ccb6"}, {"color": "#f69419", "description": "\"Error represents an event type that indicates a failure or issue that has occurred during the operation or communication process.\"", "entity_type": "\"EVENT\"", "id": "\"ERROR\"", "label": "\"ERROR\"", "shape": "dot", "size": 10, "source_id": "chunk-e8060447ed5a1386a19ba248ab48ccb6"}, {"color": "#6b88af", "description": "\"Speech is an event type that conveys audio responses from the AI Speaker, which is part of the call management interaction.\"", "entity_type": "\"EVENT\"", "id": "\"SPEECH\"", "label": "\"SPEECH\"", "shape": "dot", "size": 10, "source_id": "chunk-e8060447ed5a1386a19ba248ab48ccb6"}, {"color": "#caae94", "description": "\"Audio refers to the event type where chunks of audio data from the client are sent during the call process.\"", "entity_type": "\"EVENT\"", "id": "\"AUDIO\"", "label": "\"AUDIO\"", "shape": "dot", "size": 10, "source_id": "chunk-e8060447ed5a1386a19ba248ab48ccb6"}, {"color": "#901a3b", "description": "\"Base64 encoded audio data refers to the format used to transmit audio data securely in a string format during the call.\"", "entity_type": "\"CONCEPT\"", "id": "\"BASE64_ENCODED_AUDIO_DATA\"", "label": "\"BASE64_ENCODED_AUDIO_DATA\"", "shape": "dot", "size": 10, "source_id": "chunk-e8060447ed5a1386a19ba248ab48ccb6"}]);
+                  edges = new vis.DataSet([{"description": "\"CakeCallVoice is a key component of AI Services, enabling speech processing capabilities crucial for call handling.\"", "from": "\"AI SERVICES\"", "keywords": "\"system architecture, integration\"", "source_id": "chunk-b7c438739e47c998e3f33dff10389452", "to": "\"CAKECALLVOICE\"", "width": 9.0}, {"description": "\"CakeCallNLP is integrated into AI Services to allow natural language understanding and processing during calls.\"", "from": "\"AI SERVICES\"", "keywords": "\"system architecture, processing\"", "source_id": "chunk-b7c438739e47c998e3f33dff10389452", "to": "\"CAKECALLNLP\"", "width": 9.0}, {"description": "\"CakeStorage supports AI Services by managing call data storage and retrieval, vital for operation.\"", "from": "\"AI SERVICES\"", "keywords": "\"data management, system support\"", "source_id": "chunk-b7c438739e47c998e3f33dff10389452", "to": "\"CAKESTORAGE\"", "width": 8.0}, {"description": "\"WebSocket API is utilized by AI Services to facilitate real-time communication and data streaming between clients and the system.\"", "from": "\"AI SERVICES\"", "keywords": "\"real-time communication, technology integration\"", "source_id": "chunk-b7c438739e47c998e3f33dff10389452", "to": "\"WEBSOCKET API\"", "width": 9.0}, {"description": "\"Client interacts with AI Services to process calls and receive automated responses for customer engagements.\"", "from": "\"AI SERVICES\"", "keywords": "\"client interaction, automation\"", "source_id": "chunk-b7c438739e47c998e3f33dff10389452", "to": "\"CLIENT\"", "width": 9.0}, {"description": "\"Callbot is a practical application of AI Services that leverages its capabilities for automating customer calls.\"\u003cSEP\u003e\"Callbot operates under the umbrella of AI Services to facilitate automated communication and interaction with clients.\"", "from": "\"AI SERVICES\"", "keywords": "\"automation, communication\"\u003cSEP\u003e\"system application, automation\"", "source_id": "chunk-b7c438739e47c998e3f33dff10389452\u003cSEP\u003echunk-e8060447ed5a1386a19ba248ab48ccb6", "to": "\"CALLBOT\"", "width": 17.0}, {"description": "\"Speech Processing techniques are foundational to the AI Services, enabling voice data analysis for improved interactions.\"", "from": "\"AI SERVICES\"", "keywords": "\"core functionality, technology\"", "source_id": "chunk-b7c438739e47c998e3f33dff10389452", "to": "\"SPEECH PROCESSING\"", "width": 10.0}, {"description": "\"Audio Streaming capabilities are utilized within AI Services for effective call management and real-time communication.\"", "from": "\"AI SERVICES\"", "keywords": "\"system operation, real-time support\"", "source_id": "chunk-b7c438739e47c998e3f33dff10389452", "to": "\"AUDIO STREAMING\"", "width": 9.0}, {"description": "\"AI Speaker is a feature of AI Services that generates the voice outputs necessary for communicating with clients.\"", "from": "\"AI SERVICES\"", "keywords": "\"dialogue management, functionality\"", "source_id": "chunk-b7c438739e47c998e3f33dff10389452", "to": "\"AI SPEAKER\"", "width": 9.0}, {"description": "\"Text-to-Speech is a component of CakeCallVoice, enhancing its function to generate spoken output for communication.\"", "from": "\"CAKECALLVOICE\"", "keywords": "\"component relationship, functionality\"", "source_id": "chunk-b7c438739e47c998e3f33dff10389452", "to": "\"TEXT-TO-SPEECH\"", "width": 8.0}, {"description": "\"start_call is an event within the WebSocket API framework that manages the initiation of calls.\"", "from": "\"WEBSOCKET API\"", "keywords": "\"event management, communication\"", "source_id": "chunk-e8060447ed5a1386a19ba248ab48ccb6", "to": "\"START_CALL\"", "width": 9.0}, {"description": "\"end_call is another event type within the WebSocket API that signifies the end of a communication session.\"", "from": "\"WEBSOCKET API\"", "keywords": "\"event management, communication\"", "source_id": "chunk-e8060447ed5a1386a19ba248ab48ccb6", "to": "\"END_CALL\"", "width": 9.0}, {"description": "\"Call Agent interacts with the Client during call sessions, facilitating communication and ensuring smooth operation.\"", "from": "\"CLIENT\"", "keywords": "\"interaction management, operational role\"", "source_id": "chunk-b7c438739e47c998e3f33dff10389452", "to": "\"CALL AGENT\"", "width": 9.0}, {"description": "\"Client Metadata is used during Call Initialization to ensure that all necessary information is gathered for the call setup.\"", "from": "\"CLIENT METADATA\"", "keywords": "\"data utilization, process step\"", "source_id": "chunk-b7c438739e47c998e3f33dff10389452", "to": "\"CALL INITIALIZATION\"", "width": 8.0}, {"description": "\"Predefined Scenarios guide the Call Initialization process by providing templates for common customer interactions.\"", "from": "\"CALL INITIALIZATION\"", "keywords": "\"standardization, process guidance\"", "source_id": "chunk-b7c438739e47c998e3f33dff10389452", "to": "\"PREDEFINED SCENARIOS\"", "width": 7.0}, {"description": "\"Client Messages and Server Messages are integral to the call process, where clients send requests and the server responds accordingly.\"", "from": "\"CLIENT MESSAGES\"", "keywords": "\"communication flow, interaction\"", "source_id": "chunk-e8060447ed5a1386a19ba248ab48ccb6", "to": "\"SERVER MESSAGES\"", "width": 10.0}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
